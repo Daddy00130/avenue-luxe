@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Avenue Luxe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --black: #111111;
+            --white: #ffffff;
+            --cream: #faf9f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-left: 30px;
+        }
+
+        /* --- About Hero --- */
+        .about-hero {
+            padding: 100px 5%;
+            text-align: center;
+            background-color: var(--cream);
+        }
+
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* --- The Story Section --- */
+        .story-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 5%;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .story-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--gold);
+            padding: 10px;
+        }
+
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        /* --- Values (Service & Sales) --- */
+        .values {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--black);
+            color: #888;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Avenue Luxe</div>
+        <nav>
+            
+            <a href="profile.html">Home</a>
+            
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>OUR STORY</h1>
+        <p>Where high-end fashion meets professional curation.</p>
+    </section>
+
+    <section class="story-section">
+        <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Avenue Luxe Boutique">
+        </div>
+        <div class="story-text">
+            <h2>Redefining Style</h2>
+            <p>Founded on the principles of elegance and precision, <strong>Avenue Luxe</strong> was created for those who value quality over quantity. We believe that your wardrobe is a reflection of your ambition.</p>
+            <br>
+            <p>Our journey began with a simple mission: to provide a curated selection of menswear, womenswear, and footwear that speaks to the modern professional. We don't just sell clothes; we build confidence through our bespoke styling services.</p>
+        </div>
+    </section>
+
+    <section class="values">
+        <h2>The Avenue Standards</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>QUALITY</h3>
+                <p>We source only the finest fabrics and materials for our shoes and apparel.</p>
+            </div>
+            <div class="value-card">
+                <h3>SERVICE</h3>
+                <p>Our professional stylists are here to ensure every fit is perfection.</p>
+            </div>
+            <div class="value-card">
+                <h3>LUXURY</h3>
+                <p>An unmatched shopping experience, from browsing to unboxing.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 AVENUE LUXE. THE ART OF DRESSING.
+    </footer>
+
+</body>
+</html>

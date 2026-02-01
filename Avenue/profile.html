@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenue Luxe | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --black: #111111;
+            --white: #ffffff;
+            --cream: #faf9f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* --- 1. Interactive Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color:brown;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-left: 30px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* --- 2. Moving Text Bar --- */
+        .marquee-container {
+            margin-top: 70px; /* Offset for fixed header */
+            background: var(--black);
+            color: var(--white);
+            padding: 12px 0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .marquee-text {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee-run 25s linear infinite;
+        }
+
+        .marquee-text span {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 0 40px;
+        }
+
+        @keyframes marquee-run {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- 3. Hero Sales Slider --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slider {
+            position: absolute;
+            width: 300%;
+            height: 100%;
+            display: flex;
+            animation: slide-anim 18s infinite;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
+        }
+
+        @keyframes slide-anim {
+            0%, 30% { transform: translateX(0%); }
+            33%, 63% { transform: translateX(-33.33%); }
+            66%, 96% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0%); }
+        }
+
+        .hero-overlay {
+            position: relative;
+            text-align: center;
+            color: var(--white);
+            z-index: 10;
+        }
+
+        .hero-overlay h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 20px;
+            letter-spacing: 10px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            border: 1px solid var(--gold);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            border-color: var(--white);
+        }
+
+        /* --- 4. Interactive Sales/Service Section --- */
+        .home-main {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            background: var(--cream);
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s;
+        }
+
+        .card:hover img { transform: scale(1.1); }
+
+        .card-label {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            color: var(--white);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* --- 5. Footer --- */
+        footer {
+            background: blue;
+            color:burlywood;
+            padding: 60px 5% 30px;
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 { color: var(--white); margin-bottom: 20px; text-transform: uppercase; font-size: 12px; }
+        .footer-links p { margin-bottom: 10px; cursor: pointer; transition: 0.3s; }
+        .footer-links p:hover { color: var(--gold); }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Avenue Luxe</div>
+        <nav>
+            <a href="about_us.html">About us</a>
+            <a href="contact_us.html">Contact us</a>
+            
+           
+        </nav>
+    </header>
+
+  
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1500&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1500&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1500&q=80');"></div>
+        </div>
+        <div class="hero-overlay">
+            <h1>AVENUE LUXE</h1>
+            <p style="letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">Refined Sales & Professional Styling</p>
+            <a href="#" class="cta-btn">Shop The Collection</a>
+        </div>
+    </section>
+     <div class="marquee-container">
+        <div class="marquee-text">
+            <span>EXPLORE THE WINTER COLLECTION</span>
+            <span>PREMIUM FOOTWEAR NOW IN STOCK</span>
+            <span>BOOK A PRIVATE STYLING SESSION</span>
+            <span>WORLDWIDE LUXURY SHIPPING</span>
+            <span>EXPLORE THE WINTER COLLECTION</span>
+            <span>PREMIUM FOOTWEAR NOW IN STOCK</span>
+            <span>BOOK A PRIVATE STYLING SESSION</span>
+            <span>WORLDWIDE LUXURY SHIPPING</span>
+        </div>
+    </div>
+    <main class="home-main">
+        <h2 class="section-title">Elevated Essentials</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=800&q=80" alt="Menswear Tailored Perfection">
+                <div class="card-label">
+                    <h3>MENSWEAR</h3>
+                    <p>Tailored Perfection</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80" alt="Shoes">
+                <div class="card-label">
+                    <h3>FOOTWEAR</h3>
+                    <p>Step into Luxury</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80" alt="Service">
+                <div class="card-label">
+                    <h3>STYLING SERVICE</h3>
+                    <p>Expert Wardrobe Curation</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">Avenue Luxe</div>
+                <p>Avenue Luxe is a premier destination for high-fashion apparel and footwear, offering professional styling services for the modern individual.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <p>New Arrivals</p>
+                <p>Men's Signature</p>
+                <p>Women's Boutique</p>
+                <p>Footwear Edition</p>
+            </div>
+            <div class="footer-links">
+                <h4>Support & Services</h4>
+                <p>Personal Styling</p>
+                <p>Shipping Policy</p>
+                <p>Order Tracking</p>
+                <p>Contact Us</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 AVENUE LUXE. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
